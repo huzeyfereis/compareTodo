@@ -1,17 +1,13 @@
 import React from 'react';
-import {
-  Container,
-  CreatedAt,
-  SolveButton,
-  ToDoTitle,
-} from './ListItem.styled';
+import { Container, SolveButton, ToDoTitle } from './ListItem.styled';
 
-const ListItem = ({ listItem }) => {
+const ListItem = ({ listItem, solveToDoItem }) => {
   return (
     <Container key={listItem.id} id={listItem.id}>
-      <ToDoTitle>{listItem.title}</ToDoTitle>
-      <CreatedAt>{listItem.timeStamp}</CreatedAt>
-      <SolveButton>Solve</SolveButton>
+      <ToDoTitle textDecoration={listItem.isSolved}>{listItem.title}</ToDoTitle>
+      <SolveButton onClick={() => solveToDoItem(listItem.id)}>
+        {listItem.isSolved ? 'Solved' : 'Solve'}
+      </SolveButton>
     </Container>
   );
 };

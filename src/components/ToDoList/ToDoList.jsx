@@ -1,18 +1,15 @@
-import React, { useContext } from 'react';
-import { ToDoContext } from '../../contexts/ToDoProvider';
 import CreateToDo from '../CreateToDo';
-import ListItem from '../ListItem';
-import { Container } from './ToDoList.styled';
+import List from '../List';
+import Logo from '../Logo/Logo';
+import { Container, Title } from './ToDoList.styled';
 
 const ToDoList = () => {
-  const [toDoItems, setToDoItems] = useContext(ToDoContext);
-  console.log(toDoItems);
   return (
     <Container>
+      <Logo />
+      <Title>To Do List App</Title>
       <CreateToDo />
-      {toDoItems.map((item) => (
-        <ListItem key={item.id} listItem={item} />
-      ))}
+      <List />
     </Container>
   );
 };
