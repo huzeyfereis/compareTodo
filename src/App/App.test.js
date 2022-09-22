@@ -3,5 +3,5 @@ import App from './App';
 
 test('Renders successfully', () => {
   const { getByText } = render(<App />);
-  getByText("4C Platform Frontend Technical Test")
+  getByText('Add');
 });
