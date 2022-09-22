@@ -1,10 +1,11 @@
 import React from 'react';
 import ToDoList from '../components/ToDoList';
+import { ToDoProvider } from '../contexts/ToDoProvider';
 
 const App = () => (
-  <div>
+  <ToDoProvider>
     <ToDoList />
-  </div>
+  </ToDoProvider>
 );
 
 export default App;

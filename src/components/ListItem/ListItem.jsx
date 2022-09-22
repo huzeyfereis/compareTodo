@@ -6,11 +6,11 @@ import {
   ToDoTitle,
 } from './ListItem.styled';
 
-const ListItem = () => {
+const ListItem = ({ listItem }) => {
   return (
-    <Container>
-      <ToDoTitle>To Do Item</ToDoTitle>
-      <CreatedAt>123t4212</CreatedAt>
+    <Container key={listItem.id} id={listItem.id}>
+      <ToDoTitle>{listItem.title}</ToDoTitle>
+      <CreatedAt>{listItem.timeStamp}</CreatedAt>
       <SolveButton>Solve</SolveButton>
     </Container>
   );
